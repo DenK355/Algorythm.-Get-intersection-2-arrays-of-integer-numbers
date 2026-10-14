@@ -5,7 +5,7 @@ function commonElements() {
     const arr1 = [];
     const arr2 = new Set();
 
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 100; i++) {
         arr1.push(Math.floor(Math.random() * 100));
         arr2.add(Math.floor(Math.random() * 100));
     }
@@ -21,7 +21,7 @@ function commonElements() {
         }
     
 
-    return [...result];
+    return [...result].sort((a, b) => a - b);
 }
 
 console.log(commonElements());
