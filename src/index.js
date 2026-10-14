@@ -2,27 +2,26 @@
 
 function commonElements() {
 
-    let arr1 = [];
-    let arr2 = [];
+    const arr1 = [];
+    const arr2 = new Set();
 
     for (let i = 0; i < 25; i++) {
-        arr1.push(Math.floor(Math.random() * 100) + 1);
-        arr2.push(Math.floor(Math.random() * 100) + 1);
+        arr1.push(Math.floor(Math.random() * 100));
+        arr2.add(Math.floor(Math.random() * 100));
     }
 
-    let result = [];
+    const result = new Set();
 
-    for (let i = 0; i < arr1.length; i++) {
-        for (let j = 0; j < arr2.length; j++) {
+        for (const number of arr1) {
 
-            if (arr1[i] === arr2[j] && !result.includes(arr1[i])) {
-                result.push(arr1[i]);
+            if (arr2.has(number)) {
+                result.add(number);
             }
 
         }
-    }
+    
 
-    return result;
+    return [...result];
 }
 
 console.log(commonElements());
